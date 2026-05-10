@@ -7,7 +7,7 @@ PP3 is used for the maps of *all* constellations on [Wikipedia](http://wikipedia
 
 PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004. 
 
-**I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current GNU/Linux, macOS and Windows.** Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
+**I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current [GNU/Linux](https://blog.hani-ibrahim.de/en/pp3-ubuntu.html), [macOS](https://blog.hani-ibrahim.de/en/pp3-macos.html) and Windows (not yet).** Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ This enables you to use two important commands:
 1. Open the terminal.
 
 2. Change directory to the root of PP3 where the `Makefile` is located.
-   E.g.: `cd ~\Download\pp3`
+   E.g.: `cd ~/Download/pp3`
 
 3. Type the command `make`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
 
@@ -81,6 +81,7 @@ Documentation, manuals in PDF & HTML is in the `doc` directory, examples in the 
 ![ori-web.png](./examples/doc-examples/orion_color.png)
 
 ```bash
+# File: orion_color.pp3
 # Chart of the Orion, color (EPS-output)
 filename output ori.tex
 switch eps_output on # EPS output
@@ -92,11 +93,17 @@ reposition ORI 34 E ;    # Mintaka
 reposition ORI 50 W ;    # Alnitak### Viewer
 ```
 
+```bash
+# Make chart
+pp3 orion_color.pp3
+```
+
 ### Scorpion
 
 ![sco-web.jpg](./examples/doc-examples/scorpion_b&w.jpg)
 
 ```bash
+# File: scorpion_b&w.pp3
 # Chart of the Scorpion, printable on a black
 # and white printer (PDF-output)
 
@@ -130,9 +137,16 @@ reposition SCO 20 S ;    # sigma SCO
 reposition M 23 NE ;
 ```
 
+```bash
+# Make Chart
+pp3 scorpion_b&w.pp3
+```
+
+## Output files
+
 In general PP3 generates:
 
-* LaTeX file (\*.tex)
+* LaTeX file (\*.tex) → LaTeX
 
 * Device Independent DVI file (*.dvi)
 
@@ -141,6 +155,8 @@ In general PP3 generates:
 * PDFs are possible.
 
 To view the **EPS file** on GNU/Linux had a viewer installed by default. For Windows I recommend [IrfanView](https://www.irfanview.com/). Since newer macOS version and its Preview.app do not support Postscript anymore, there are some commercial viewer on the App Store.
+
+Unfortunately Microsoft Word or LibreOffice do not support EPS files anymore. 
 
 For viewing and converting on **all platforms** I recommend [Inkscape](https://inkscape.org/) or on the terminal for all platforms [Ghostscript](https://www.ghostscript.com/)
 
@@ -157,6 +173,18 @@ gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r300 -sOutputFile=out_color.png in
 
 ## Disclaimer
 
-PP3 is written in C++. I am not a C++ developer or has expertise in that language. I could remove the bugs by just googling the error and warnings.
+PP3 is written in C++. I am not a C++ developer or has expertise in that language. I could remove the bugs by just googling the error and warnings and with AI.
 
 I am not able to add new features, expand the database or find serious bugs. I just providing binaries and share them with you who can not compile it themselves.
+
+## License
+
+[The MIT License (MIT)](https://mit-license.org/)
+
+Copyright © 2026 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit ersons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  RISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN  THE SOFTWARE.
