@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+<title>The rim - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Penalty-scheme.html#Penalty%20scheme" title="Penalty scheme">
+<link rel="prev" href="Basics-about-penalties.html#Basics%20about%20penalties" title="Basics about penalties">
+<link rel="next" href="Overlaps-with-line-objects.html#Overlaps%20with%20line%20objects" title="Overlaps with line objects">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="The%20rim">The rim</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Overlaps-with-line-objects.html#Overlaps%20with%20line%20objects">Overlaps with line objects</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Basics-about-penalties.html#Basics%20about%20penalties">Basics about penalties</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Penalty-scheme.html#Penalty%20scheme">Penalty scheme</a>
+<hr><br>
+</div>
+
+<h4 class="subsection">5.7.2 The rim</h4>
+
+<p>Each label has a <em>core area</em>, which is the text area itself, and a
+<em>rim</em>, which is an area around the text area.  Both are rectangles,
+separated by a <em>skip</em> that is the same as the one that separates
+labels and their respective celestial object, see <a href="Other-layout-parameters.html#Other%20layout%20parameters">Other layout parameters</a>.
+
+   <img src="betelg.png" alt="Diagram of core and rim of a label">
+
+   <p><acronym>PP3</acronym> takes both rim and core into account.  The relative
+significance of the rim can be set with e.g.
+
+<pre class="example">     penalties rim 2000
+</pre>
+
+<p>which doubles the default value of <code>1000</code>.  With
+
+<pre class="example">     penalties rim 0
+</pre>
+
+<p>the rim loses its effect completely.  Notice that <acronym>PP3</acronym> adds rim
+penalties also for the whole core area, so that the core is always more
+significant than the rim, no matter how you set the penalty values.
+
+   <p>What's the point in the rim?  The core avoids overlaps, but the rim is
+supposed to make <em>approximations</em> of labels with other things on
+the map less probable.
+
+   <p>You may have noticed that the rim overlaps with the object (star or
+nebula) itself.  Usually this only adds some sort of bias to the penalty
+values of the diagonal positions, but this direct contact is
+particularly useful for double stars: There both components get
+&ldquo;their&rdquo; label on &ldquo;their&rdquo; side due to the small rim overlaps with the
+respectively other component.
+
+   </body></html>
+

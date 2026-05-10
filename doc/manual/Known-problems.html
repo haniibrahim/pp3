@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+<title>Known problems - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX" title="PP3 and LaTeX">
+<link rel="next" href="Data-file-formats.html#Data%20file%20formats" title="Data file formats">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Known%20problems">Known problems</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Data-file-formats.html#Data%20file%20formats">Data file formats</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX">PP3 and LaTeX</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr><br>
+</div>
+
+<h2 class="appendix">Appendix A Known problems</h2>
+
+<p>The following issues are known to the maintainer of <acronym>PP3</acronym>.  If you
+find another one, please report it on
+<a href="http://sourceforge.net/projects/pp3"><acronym>PP3</acronym>'s project page</a>.
+
+     <ul>
+<li>Unknown stars in constellation line data files (the default is the file
+<code>lines.dat</code>) result in an error message, which is good, but the
+error message may include another &ndash; probably valid &ndash; star name, which
+is bad.  Fortunately the actually wrong star and the printed star are
+within the same constellation line, the printed star coming first.
+
+     <li>The usage of semicolons in <acronym>PP3</acronym> input scripts is not
+consistent. For example, a `<code>reposition</code>' needs one, but a
+`<code>set_label_text</code>' not.
+
+     <li>If you print a large portion of the sky, e.g. a hemisphere, and a
+pole-near region of the Milky Way (e.g.&nbsp;Southern Cross) is at
+the very rim of the map, the Milky Way dots are printed a little bit too
+coarsely, leaving tiny gaps between the dots.
+
+     <li>The declination circles have slight kinks at 0h rectascension. 
+Except for the \pm 80^\circ circles they are mostly invisible
+though.
+
+     <li>Ecliptic and grid don't take part in <acronym>PP3</acronym>'s penalty scheme yet.
+
+     <li>Large nebulae are drawn as ellipses representing their approximative
+shape in the sky.  However, the algorithm doing that is mathematically
+flawed and doesn't work for polar-near regions.  Fortunately this only
+affects the Small Magellanic Cloud, the actual shape of which is, by a
+curious coincidence, rendered very well by that algorithm. 
+</ul>
+
+<ul class="menu">
+<li><a accesskey="1" href="Wishlist.html#Wishlist">Wishlist</a>:                     PP3's todo list.  Feel free to contribute! 
+</ul>
+
+   </body></html>
+

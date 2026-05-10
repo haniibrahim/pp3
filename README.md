@@ -1,0 +1,122 @@
+# PP3 - Celestial Chart Generation
+
+PP3 creates celestial charts. It generates resolution independent maps of very high graphical quality. They can be used for example as illustrations in books or on web pages. You may use own databases or free ones from the Internet.
+
+PP3 is used for the maps of *all* constellations on [Wikipedia](http://wikipedia.org/w/wiki.phtml?title=List_of_constellations)! (For example, have a
+ look at the [Cygnus](http://www.wikipedia.org/wiki/Cygnus) entry.)
+
+PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004.
+
+## My intention
+
+2021 I removed a bug and compiled it for GNU/Linux & macOS for the x86_64 platform and provided easy-2-use installers on my blog [pp3 | Hani's Omnium-Gatherum](https://blog.hani-ibrahim.de/en/?s=pp3) for my own purpose.
+
+2026 I want to install it on Windows 11 and found out that the provided binary from Torsten is no longer compatible with modern Windows. So I compiled it and build also an installer for it.
+
+## Prerequisites
+
+PP3 creates a LaTeX file. Apparently you cannot directly do something with it. So you  have to have a TeX suite installed in the first place. Otherwise PP3 will not function.
+
+### TeX package
+
+For **Windows**, you may want to use the [MikTeX](http://www.miktex.org) distribution, or the [TeX Live](http://www.tug.org/texlive/) distribution. 
+
+For **GNU/Linux**, it is either already installed or you can easily install it with your package manager. On Debian or Ubuntu systems and derivatives you need the packages `texlive` and `texlive-pstricks`. 
+
+At **macOS** you can install [MacTeX](https://www.tug.org/mactex/). 
+
+*Please be advised that these packages can occupy a lot of space on your disc.*
+
+This enables you to use two important commands:
+
+* latex for transforming the .tex file to a .dvi file.
+
+* dvips for transforming the .dvi file to a Postscript or EPS file.
+
+## Examples
+
+### Orion
+
+![ori-web.png](./examples/doc-examples/orion_color.png)
+
+```bash
+# Chart of the Orion, color (EPS-output)
+filename output ori.tex
+switch eps_output on # EPS output
+
+objects_and_labels
+
+delete NGC 1973  NGC 1975 ;
+reposition ORI 34 E ;    # Mintaka
+reposition ORI 50 W ;    # Alnitak### Viewer
+```
+
+### Scorpion
+
+![sco-web.jpg](./examples/doc-examples/scorpion_b&w.jpg)
+
+```bash
+# Chart of the Scorpion, printable on a black
+# and white printer (PDF-output)
+
+set constellation SCO
+set center_rectascension  17
+set center_declination   -30
+set grad_per_cm            4.5
+set box_width              9
+set box_height             7
+
+switch milky_way on
+switch pdf_output on # PDF output
+switch colored_stars off
+color stars 0 0 0
+color nebulae 0 0 0
+color background 1 1 1
+color grid 0.5 0.5 0.5
+color ecliptic 0.3 0.3 0.3
+color constellation_lines 0.7 0.7 0.7
+color labels 0 0 0
+color boundaries 0.8 0.8 0.8
+color highlighted_boundaries 0 0 0
+color milky_way 0.5 0.5 0.5
+
+filename output sco.tex
+
+objects_and_labels
+
+delete M 18  M 4  NGC 6590  NGC 6634  IC 4700 ;
+reposition SCO 20 S ;    # sigma SCO
+reposition M 23 NE ;
+```
+
+In general PP3 generates:
+
+* LaTeX file (\*.tex)
+
+* Device Independent DVI file (*.dvi)
+
+* Encapsulated PostScript (EPS) file (*.eps) or 
+
+* PDFs are possible.
+
+To view the **EPS file** on GNU/Linux had a viewer installed by default. For Windows I recommend [IrfanView](https://www.irfanview.com/). Since newer macOS version and its Preview.app do not support Postscript anymore, there are some commercial viewer on the App Store.
+
+For viewing and converting on **all platforms** I recommend [Inkscape](https://inkscape.org/) or on the terminal for all platforms [Ghostscript](https://www.ghostscript.com/)
+
+```bash
+# Convert EPS to JPEG
+gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=jpeg -sOutputFile=out.png in.eps
+# Convert EPS to gray PNG with 300dpi 
+gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pnggray -r300 -sOutputFile=out_gray.png in.eps
+# Convert EPS to color PNG with 300dpi
+gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r300 -sOutputFile=out_color.png in.eps
+
+```
+
+**PDF file** viewer are available by default on any platform.
+
+## Disclaimer
+
+PP3 is written in C++. I am not a C++ developer or has expertise in that language. I could remove the bugs by just googling the error and warnings.
+
+I am not able to add new features, expand the database or find serious bugs. I just providing binaries and share them with you who can not compile it themselves.

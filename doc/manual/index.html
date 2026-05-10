@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+<title>PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="#Top">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<!-- %**end of header -->
+
+<div class="node">
+<p>
+Node:&nbsp;<a name="Top">Top</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Introduction.html#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
+<hr><br>
+</div>
+
+<h2 class="unnumbered"> The PP3 program for drawing celestial maps.</h2>
+
+<p><acronym>PP3</acronym> generates celestial charts of high (typo)graphical quality. 
+It uses LaTeX + pstricks for this, so the end formats are
+<acronym>EPS</acronym> and <acronym>PDF</acronym> (in contrast to mere bitmaps).
+
+   <p>The program automatically avoids labels that overlap, and you can change
+many parameters.  You can place arbitrary text on the map using the
+flexibility of the LaTeX language.
+
+<ul class="menu">
+<li><a accesskey="1" href="Introduction.html#Introduction">Introduction</a>:                 The ideas behind it. 
+<li><a accesskey="2" href="Installation.html#Installation">Installation</a>:                 Some ways to set PP3 up. 
+<li><a accesskey="3" href="Basic-astronomical-terms.html#Basic%20astronomical%20terms">Basic astronomical terms</a>:     Rectascension, declination, and such. 
+<li><a accesskey="4" href="Usage.html#Usage">Usage</a>:                        How to invoke PP3. 
+<li><a accesskey="5" href="Input-scripts.html#Input%20scripts">Input scripts</a>:                Telling PP3 what to do. 
+<li><a accesskey="6" href="Keywords-reference.html#Keywords%20reference">Keywords reference</a>:           List of all PP3 keywords. 
+<li><a accesskey="7" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX">PP3 and LaTeX</a>:                LaTeX in labels, and LaTeX preambles. 
+<li><a accesskey="8" href="Known-problems.html#Known%20problems">Known problems</a>:               List of known shortcomings and bugs. 
+<li><a accesskey="9" href="Data-file-formats.html#Data%20file%20formats">Data file formats</a>:            Internal structure of the database files. 
+<li><a href="List-of-all-constellations.html#List%20of%20all%20constellations">List of all constellations</a>:   All 88 official constellations with
+                                  their abbreviations and coordinates. 
+<li><a href="Index.html#Index">Index</a>:                        General index. 
+</ul>
+
+   <p>This manual exists as a
+<a href="http://pp3.sourceforge.net/manual/">multiple HTML</a> (also in
+<a href="http://pp3.sourceforge.net/pp3man.zip"><acronym>ZIP</acronym> form</a>) and
+<a href="http://pp3.sourceforge.net/manual/pp3.html">single HTML page</a> and a
+<a href="http://pp3.sourceforge.net/manual/pp3.pdf">PDF file</a>.
+
+<!-- Output the table of the contents at the beginning. -->
+
+<div class="contents">
+<h2>Table of Contents</h2>
+<ul>
+<li><a name="toc_Top" href="index.html#Top"> The PP3 program for drawing celestial maps.</a>
+<li><a name="toc_Introduction" href="Introduction.html#Introduction">1 Introduction</a>
+<ul>
+<li><a href="What-it-is.html#What%20it%20is">1.1 What it is</a>
+<li><a href="What-it-is-not.html#What%20it%20is%20not">1.2 What it is not</a>
+<li><a href="Online-resources.html#Online%20resources">1.3 Online resources</a>
+<li><a href="Successful-use-of-PP3.html#Successful%20use%20of%20PP3">1.4 Successful use of PP3</a>
+<ul>
+<li><a href="Successful-use-of-PP3.html#Successful%20use%20of%20PP3"> Wikipedia</a>
+<li><a href="Successful-use-of-PP3.html#Successful%20use%20of%20PP3"> French Wikipedia</a>
+<li><a href="Successful-use-of-PP3.html#Successful%20use%20of%20PP3"> h2g2</a>
+</li></ul>
+</li></ul>
+<li><a name="toc_Installation" href="Installation.html#Installation">2 Installation</a>
+<ul>
+<li><a href="Windows.html#Windows">2.1 Installation on Windows</a>
+<ul>
+<li><a href="Getting-TeX.html#Getting%20TeX">2.1.1 Getting TeX</a>
+<li><a href="Getting-Ghostscript.html#Getting%20Ghostscript">2.1.2 Getting Ghostscript</a>
+<li><a href="Installing-PP3.html#Installing%20PP3">2.1.3 Installation of PP3 itself</a>
+</li></ul>
+<li><a href="Linux.html#Linux">2.2 Installation on Linux</a>
+<ul>
+<li><a href="RPM-installation.html#RPM%20installation">2.2.1 <acronym>RPM</acronym> installation</a>
+<li><a href="Building-from-sources.html#Building%20from%20sources">2.2.2 Building from sources</a>
+</li></ul>
+<li><a href="Increase-TeX-s-memory.html#Increase%20TeX's%20memory">2.3 Increase TeX's memory</a>
+</li></ul>
+<li><a name="toc_Basic%20astronomical%20terms" href="Basic-astronomical-terms.html#Basic%20astronomical%20terms">3 Basic astronomical terms</a>
+<ul>
+<li><a href="Celestial-coordinate-system.html#Celestial%20coordinate%20system">3.1 Celestial coordinate system</a>
+<li><a href="Magnitudes.html#Magnitudes">3.2 The system of magnitudes</a>
+<li><a href="Constellations.html#Constellations">3.3 Constellations</a>
+<li><a href="Catalogues.html#Catalogues">3.4 Catalogues: Flamsteed, Henry Draper, NGC/IC and Messier</a>
+<ul>
+<li><a href="Denoting-stars.html#Denoting%20stars">3.4.1 Denoting stars</a>
+<li><a href="Denoting-nebulae.html#Denoting%20nebulae">3.4.2 Denoting nebulae</a>
+</li></ul>
+</li></ul>
+<li><a name="toc_Usage" href="Usage.html#Usage">4 Usage</a>
+<ul>
+<li><a href="Invocation.html#Invocation">4.1 Starting PP3</a>
+<li><a href="Using-pipes.html#Using%20pipes">4.2 Using pipes</a>
+</li></ul>
+<li><a name="toc_Input%20scripts" href="Input-scripts.html#Input%20scripts">5 Writing input scripts</a>
+<ul>
+<li><a href="Minimal-example.html#Minimal%20example">5.1 Minimal example input script</a>
+<li><a href="More-bells-and-wistles.html#More%20bells%20and%20wistles">5.2 More bells and wistles</a>
+<li><a href="Dimensions-and-scale.html#Dimensions%20and%20scale">5.3 Dimensions and scale</a>
+<li><a href="Parameters-and-commands.html#Parameters%20and%20commands">5.4 Parameters and Commands</a>
+<li><a href="Labels.html#Labels">5.5 Labels</a>
+<ul>
+<li><a href="Changing-label-texts.html#Changing%20label%20texts">5.5.1 Changing label texts</a>
+<li><a href="Deleting-and-adding-labels.html#Deleting%20and%20adding%20labels">5.5.2 Deleting and adding labels</a>
+<li><a href="Reposition-labels.html#Reposition%20labels">5.5.3 Reposition labels</a>
+<li><a href="Text-labels.html#Text%20labels">5.5.4 Text labels</a>
+<li><a href="Using-flexes.html#Using%20flexes">5.5.5 Using flexes</a>
+<li><a href="Tic-labels.html#Tic%20labels">5.5.6 Tic mark labels</a>
+</li></ul>
+<li><a href="Deleting-and-adding-objects.html#Deleting%20and%20adding%20objects">5.6 Deleting and adding stars and nebulae</a>
+<li><a href="Penalty-scheme.html#Penalty%20scheme">5.7 Penalty scheme</a>
+<ul>
+<li><a href="Basics-about-penalties.html#Basics%20about%20penalties">5.7.1 Basics about penalties</a>
+<li><a href="The-rim.html#The%20rim">5.7.2 The rim</a>
+<li><a href="Overlaps-with-line-objects.html#Overlaps%20with%20line%20objects">5.7.3 Overlaps with line objects</a>
+<li><a href="Penalty-threshold.html#Penalty%20threshold">5.7.4 Penalty threshold</a>
+</li></ul>
+</li></ul>
+<li><a name="toc_Keywords%20reference" href="Keywords-reference.html#Keywords%20reference">6 Keywords reference</a>
+<ul>
+<li><a href="General-structure.html#General%20structure">6.1 General structure</a>
+<li><a href="Parameters.html#Parameters">6.2 Setting Parameters</a>
+<ul>
+<li><a href="Essential-parameters.html#Essential%20parameters">6.2.1 Essential parameters</a>
+<ul>
+<li><a href="View-control.html#View%20control">6.2.1.1 Map view, scale, and size</a>
+<li><a href="Output-control.html#Output%20control">6.2.1.2 Setting what file should be created</a>
+<li><a href="Highlighted-constellation.html#Highlighted%20constellation">6.2.1.3 The highlighted constellation</a>
+</li></ul>
+<li><a href="Switching-things-on-or-off.html#Switching%20things%20on%20or%20off">6.2.2 Switching things on or off</a>
+<li><a href="Filtering-by-brightness.html#Filtering%20by%20brightness">6.2.3 Filtering stars and nebulae by their brightness</a>
+<li><a href="Colour-and-line-style-and-other-layout.html#Colour%20and%20line%20style%20and%20other%20layout">6.2.4 Colour, line style, and other layout</a>
+<ul>
+<li><a href="Colours.html#Colours">6.2.4.1 Colours</a>
+<li><a href="Line-styles-and-widths.html#Line%20styles%20and%20widths">6.2.4.2 Line styles and widths</a>
+<li><a href="Other-layout-parameters.html#Other%20layout%20parameters">6.2.4.3 Other layout parameters</a>
+</li></ul>
+<li><a href="Implementing-a-global-style.html#Implementing%20a%20global%20style">6.2.5 Implementing a global style</a>
+<li><a href="Penalties.html#Penalties">6.2.6 Penalties</a>
+<li><a href="Filenames.html#Filenames">6.2.7 Filenames</a>
+</li></ul>
+<li><a href="Commands.html#Commands">6.3 Setting or deleting celestial objects and their labels</a>
+<ul>
+<li><a href="Changing-sky-objects.html#Changing%20sky%20objects">6.3.1 Adding and deleting stars and nebulae</a>
+<li><a href="Changing-labels.html#Changing%20labels">6.3.2 How to add, delete, and reposition labels</a>
+<li><a href="Arbitrary-text.html#Arbitrary%20text">6.3.3 How to place text on the map</a>
+<ul>
+<li><a href="Flexes.html#Flexes">6.3.3.1 Flexes</a>
+<li><a href="Tic-mark-labels.html#Tic%20mark%20labels">6.3.3.2 Tic mark labels</a>
+</li></ul>
+</li></ul>
+</li></ul>
+<li><a name="toc_PP3%20and%20LaTeX" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX">7 PP3 and LaTeX</a>
+<ul>
+<li><a href="LaTeX-in-labels.html#LaTeX%20in%20labels">7.1 Using LaTeX in labels</a>
+<li><a href="LaTeX-preamble.html#LaTeX%20preamble">7.2 LaTeX preamble</a>
+<ul>
+<li><a href="Default-preamble.html#Default%20preamble">7.2.1 Default preamble</a>
+<li><a href="User-preamble.html#User%20preamble">7.2.2 User preamble</a>
+</li></ul>
+<li><a href="LaTeX-hooks.html#LaTeX%20hooks">7.3 LaTeX hooks</a>
+</li></ul>
+<li><a name="toc_Known%20problems" href="Known-problems.html#Known%20problems">Appendix A Known problems</a>
+<ul>
+<li><a href="Wishlist.html#Wishlist">A.1 Wishlist</a>
+</li></ul>
+<li><a name="toc_Data%20file%20formats" href="Data-file-formats.html#Data%20file%20formats">Appendix B Data file formats</a>
+<ul>
+<li><a href="Stars-data-file.html#Stars%20data%20file">B.1 Stars data file</a>
+<li><a href="Nebulae-data-file.html#Nebulae%20data%20file">B.2 Nebulae data file</a>
+<li><a href="Lines-data-file.html#Lines%20data%20file">B.3 Constellation lines data file</a>
+<li><a href="Boundaries-data-file.html#Boundaries%20data%20file">B.4 Boundaries data file</a>
+<li><a href="Milky-Way-data-file.html#Milky%20Way%20data%20file">B.5 Milky Way data file</a>
+<li><a href="Label-dimensions-file.html#Label%20dimensions%20file">B.6 Label dimensions file</a>
+</li></ul>
+<li><a name="toc_List%20of%20all%20constellations" href="List-of-all-constellations.html#List%20of%20all%20constellations">Appendix C List of all constellations</a>
+<li><a name="toc_Index" href="Index.html#Index"> Index</a>
+</li></ul>
+</div>
+
+
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   
+   </body></html>
+

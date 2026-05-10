@@ -1,0 +1,8 @@
+filename output ori.tex
+switch eps_output on
+
+objects_and_labels
+
+delete NGC 1973  NGC 1975 ;
+reposition ORI 34 E ;    # Mintaka
+reposition ORI 50 W ;    # Alnitak

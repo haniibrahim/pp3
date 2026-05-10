@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+<title>Labels - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Input-scripts.html#Input%20scripts" title="Input scripts">
+<link rel="prev" href="Parameters-and-commands.html#Parameters%20and%20commands" title="Parameters and commands">
+<link rel="next" href="Deleting-and-adding-objects.html#Deleting%20and%20adding%20objects" title="Deleting and adding objects">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Labels">Labels</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Deleting-and-adding-objects.html#Deleting%20and%20adding%20objects">Deleting and adding objects</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Parameters-and-commands.html#Parameters%20and%20commands">Parameters and commands</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Input-scripts.html#Input%20scripts">Input scripts</a>
+<hr><br>
+</div>
+
+<h3 class="section">5.5 Labels</h3>
+
+<p>My personal experience is that the most difficult part of writing input
+scripts is to fiddle about with labels.  Although <acronym>PP3</acronym> does most
+of the labelling work on its own, it is not perfect (yet).  Thus you
+will value the features described in this section.
+
+<ul class="menu">
+<li><a accesskey="1" href="Changing-label-texts.html#Changing%20label%20texts">Changing label texts</a>:         Set another text for a certain label. 
+<li><a accesskey="2" href="Deleting-and-adding-labels.html#Deleting%20and%20adding%20labels">Deleting and adding labels</a>:   Delete or add implicitly created labels. 
+<li><a accesskey="3" href="Reposition-labels.html#Reposition%20labels">Reposition labels</a>:            Reposition a text label. 
+<li><a accesskey="4" href="Text-labels.html#Text%20labels">Text labels</a>:                  How to put arbitrary text on the map. 
+<li><a accesskey="5" href="Using-flexes.html#Using%20flexes">Using flexes</a>:                 Labels that are curved. 
+<li><a accesskey="6" href="Tic-labels.html#Tic%20labels">Tic labels</a>:                   Automatically generated tic mark labels. 
+</ul>
+
+   <p>Please note how the texts themselves must be given: Either they don't
+contain any spaces or line breaks.  Then you can just enter them.  But
+if they do contain such white space, you must enclose them with
+quotes&nbsp;<code>"..."</code>.  For example, you say
+
+<pre class="example">     set_label_text HD 128620 Toliman
+</pre>
+
+<p>but
+
+<pre class="example">     set_label_text HD 128620 "Rigil Kent"
+</pre>
+
+   <p>If you (must) use quotes, and only then, you have to enter two symbols
+in a special way, namely the backslash&nbsp;<code>\</code> and the
+quotes&nbsp;<code>"</code>:
+
+<pre class="example">     set_label_text HD 128620 "\\footnotesize Toliman"
+</pre>
+
+<p>prints <code>Toliman</code> with small letters, see <a href="LaTeX-in-labels.html#LaTeX%20in%20labels">LaTeX in labels</a>. 
+Quotes must be entered as <code>\"</code>.
+
+   </body></html>
+

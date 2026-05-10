@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+<title>Filtering by brightness - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Parameters.html#Parameters" title="Parameters">
+<link rel="prev" href="Switching-things-on-or-off.html#Switching%20things%20on%20or%20off" title="Switching things on or off">
+<link rel="next" href="Colour-and-line-style-and-other-layout.html#Colour%20and%20line%20style%20and%20other%20layout" title="Colour and line style and other layout">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Filtering%20by%20brightness">Filtering by brightness</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Colour-and-line-style-and-other-layout.html#Colour%20and%20line%20style%20and%20other%20layout">Colour and line style and other layout</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Switching-things-on-or-off.html#Switching%20things%20on%20or%20off">Switching things on or off</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Parameters.html#Parameters">Parameters</a>
+<hr><br>
+</div>
+
+<h4 class="subsection">6.2.3 Filtering stars and nebulae by their brightness</h4>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set faintest_cluster_magnitude</b><i> magnitude
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Don't print open star clusters that are fainter than <var>magnitude</var>.
+
+     <p>Default: 4.0
+</td></tr>
+</table>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set faintest_diffuse_nebula_magnitude</b><i> magnitude
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Don't print nebulae that are fainter than <var>magnitude</var>.  In this
+case, `nebulae' is meant in the narrower sense, i.e. no stellar
+clusters.
+
+     <p>Default: 8.0
+</td></tr>
+</table>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set faintest_star_magnitude</b><i> magnitude
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Don't print stars that are fainter than <var>magnitude</var>.
+
+     <p>Default: 7.0
+</td></tr>
+</table>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set faintest_star_with_label_magnitude</b><i> magnitude
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Only stars that have a brightness of at least <var>magnitude</var> get an
+automatically generated label.
+
+     <p>Default: 3.7
+</td></tr>
+</table>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set faintest_star_disk_magnitude</b><i> magnitude
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Only stars that have a brightness of at least <var>magnitude</var> will be
+printed as more than just dots.
+
+     <p>Default: 4.5
+</td></tr>
+</table>
+
+<p>
+<table width="100%">
+<tr>
+<td align="left"><b>set minimal_star_radius</b><i> radius
+     </i></td>
+<td align="right">Parameter</td>
+</tr>
+</table>
+<table width="95%" align="center">
+<tr><td>
+Set the <var>radius</var> (in centimetres) of the dots that are used for the
+faintest stars.
+
+     <p>Default: 0.015
+</td></tr>
+</table>
+
+   </body></html>
+

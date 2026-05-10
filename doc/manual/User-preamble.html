@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+<title>User preamble - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="LaTeX-preamble.html#LaTeX%20preamble" title="LaTeX preamble">
+<link rel="prev" href="Default-preamble.html#Default%20preamble" title="Default preamble">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="User%20preamble">User preamble</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Default-preamble.html#Default%20preamble">Default preamble</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="LaTeX-preamble.html#LaTeX%20preamble">LaTeX preamble</a>
+<hr><br>
+</div>
+
+<h4 class="subsection">7.2.2 User preamble</h4>
+
+<p>You tell <acronym>PP3</acronym> where your own preamble is with the filename
+parameter `<code>latex_preamble</code>' in the input script, for example:
+
+<pre class="example">     filename latex_preamble mypreamble.tex
+</pre>
+
+<p>The file <code>mypreamble.tex</code> contains your LaTeX preamble macros
+and must reside in the current directory, or in another directory where
+TeX looks for its files.
+
+   <p>The following is the contents of the file <code>wiki.tex</code> of the
+<acronym>PP3</acronym> distribution.  It is the original user LaTeX preamble that
+was used for the Wikipedia Project, see <a href="Successful-use-of-PP3.html#Successful%20use%20of%20PP3">Successful use of PP3</a>.
+
+<pre class="smallexample">     <span style="font-family: serif; font-weight: normal;">01   </span>\usepackage{amsmath}
+     <span style="font-family: serif; font-weight: normal;">02   </span>\usepackage[T1]{fontenc}
+     <span style="font-family: serif; font-weight: normal;">03   </span>\IfFileExists{eulervm.sty}{\usepackage{eulervm}}{}
+     <span style="font-family: serif; font-weight: normal;">04   </span>\usepackage{relsize}
+     <span style="font-family: serif; font-weight: normal;">05   </span>\IfFileExists{t1pmy.fd}{
+     <span style="font-family: serif; font-weight: normal;">06   </span>  \renewcommand*{\sfdefault}{pmy}
+     <span style="font-family: serif; font-weight: normal;">07   </span>}{
+     <span style="font-family: serif; font-weight: normal;">08   </span>  \renewcommand*{\sfdefault}{phv}
+     <span style="font-family: serif; font-weight: normal;">09   </span>}
+     <span style="font-family: serif; font-weight: normal;">10   </span>\renewcommand{\Messier}[1]{\footnotesize{\scriptsize M}\,#1}
+     <span style="font-family: serif; font-weight: normal;">11   </span>\renewcommand{\NGC}[1]{\footnotesize{\scriptsize NGC}\,#1}
+     <span style="font-family: serif; font-weight: normal;">12   </span>\renewcommand{\IC}[1]{\footnotesize{\scriptsize IC}\,#1}
+     <span style="font-family: serif; font-weight: normal;">13   </span>\renewcommand{\FlexLabel}[1]{{\bfseries #1}}
+     <span style="font-family: serif; font-weight: normal;">14   </span>\renewcommand{\TicMark}[1]{{\mdseries\scriptsize\mathversion{normal} #1}}
+     <span style="font-family: serif; font-weight: normal;">15   </span>\AtBeginDocument{\sffamily\boldmath}
+</pre>
+
+<p>And this is what it does:
+
+     <dl>
+<dt>Line 1
+     <dd>includes the AMSMath package which provides additional macros that can
+be useful in text labels.  You can include almost arbitrary LaTeX
+packages.
+
+     <br><dt>Line 2
+     <dd>activates the so-called T1 font encoding.  It's not important to know
+what this means, but it is recommended and doesn't do any harm.
+
+     <br><dt>Line 3
+     <dd>activates nicer Greek letters.  Well, your taste may be different.  This
+<code>\IfFileExists</code> thing tests whether the package is available on the
+current computer.  The package is included only if it exists.
+
+     <br><dt>Line 4
+     <dd>enables the macro <code>\smaller</code> which can be very useful in text
+labels.  It reduces the current font size.  For example I can say
+
+     <pre class="example">          set_label_text LEO 32 "\\smaller Regulus"
+     </pre>
+
+     <br><dt>Lines 5&ndash;9
+     <dd>test whether the font Myriad is available on the current computer, and
+if it does, it makes it the new standard sans-serif font.  Else it uses
+Helvetica for that.
+
+     <br><dt>Lines 10&ndash;14
+     <dd>re-defines various LaTeX hooks in order to have nicer looking
+automatic labels, see <a href="LaTeX-hooks.html#LaTeX%20hooks">LaTeX hooks</a>.
+
+     <br><dt>Line 15
+     <dd>switches to sans-serif font (Myriad/Helvetica) with <code>\sffamily</code> and
+to bold Greek letters with <code>\boldmath</code>.
+
+   </dl>
+
+   </body></html>
+

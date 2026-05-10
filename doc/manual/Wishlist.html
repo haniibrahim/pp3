@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+<title>Wishlist - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Known-problems.html#Known%20problems" title="Known problems">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Wishlist">Wishlist</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Known-problems.html#Known%20problems">Known problems</a>
+<hr><br>
+</div>
+
+<h3 class="section">A.1 Wishlist</h3>
+
+<p>It would be nice to have the following things in <acronym>PP3</acronym>.  Please
+contact <a href="mailto:bronger@users.sourceforge.net">Torsten Bronger</a> if
+you want to contribute.
+
+     <ul>
+<li>Very faint stars, i.e. stars fainter than
+<code>faintest_star_disk_magnitude</code>, should be removed from the map
+automatically, if they overlap with a label.  It shouldn't matter
+whether the label was implicitly created or user-defined.
+
+     <li>An ephemerides module that allows to insert the Sun, the Moon, and the
+planets on the map, for a given date, time, and observation location on
+Earth.  By the way, the C++ module itself is already existing, but its
+integration into <acronym>PP3</acronym> is not done yet.
+
+     <li>More map projections, in particular a real isogonal one.
+
+     <li>The resolution of the Milky Way should be determined in a way that
+TeX's memory doesn't overflow.  Maybe one should switch to contour
+plots instead of dot patterns for the Milky Way.
+
+     <li>Create little bitmaps of all labels in order to determine kerning
+parameters for them.
+
+     <li><acronym>PP3</acronym> should become able to deal with large data bases.
+
+     <li>The
+<a href="http://cvs.sourceforge.net/viewcvs.py/celestia/celestia/data/starnames.dat">star names list of Celestia</a> or something like that should be used for
+identifying stars in input scripts. 
+</ul>
+
+   <p>Besides that, I'd like to re-structure the internals of <acronym>PP3</acronym>
+because in some respect the code is not well maintainable and
+expandable.  For the long-term future it may be worth thinking about
+using Guile as the scripting language.
+
+   </body></html>
+

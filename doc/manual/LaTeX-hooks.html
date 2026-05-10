@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+<title>LaTeX hooks - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX" title="PP3 and LaTeX">
+<link rel="prev" href="LaTeX-preamble.html#LaTeX%20preamble" title="LaTeX preamble">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="LaTeX%20hooks">LaTeX hooks</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="LaTeX-preamble.html#LaTeX%20preamble">LaTeX preamble</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="PP3-and-LaTeX.html#PP3%20and%20LaTeX">PP3 and LaTeX</a>
+<hr><br>
+</div>
+
+<h3 class="section">7.3 LaTeX hooks</h3>
+
+<p>First of all &ndash; what is a hook?  A hook in general is a macro or command
+that can be re-defined by the user, and that is called implicitly. 
+Thus, by re-defining a hook, the user can modify the behaviour of the
+program at certain points.
+
+   <p>In <acronym>PP3</acronym>, hooks are called for printing text of various kinds.  For
+example, every implicit (i.e. automatically generated) star name
+is printed by <code>\Starname</code> as in <code>\Starname{$\gamma$}</code>.  By
+default, this macro does nothing more than printing its argument:
+
+<pre class="example">     \newcommand*{\Starname}[1]{#1}
+</pre>
+
+<p>But if you re-define it, you can make every (implicit!) star label a
+little bit larger:
+
+<pre class="example">     \renewcommand*{\Starname}[1]{\larger #1}
+</pre>
+
+<p>Notice that the macro <code>\larger</code> is provided by the `relsize'
+package that must be loaded before, see <a href="User-preamble.html#User%20preamble">User preamble</a>.  So, just
+write the lines
+
+<pre class="example">     \usepackage{relsize}
+     \renewcommand*{\Starname}[1]{\larger #1}
+</pre>
+
+<p>in the file <code>mypreamble.tex</code>, say
+
+<pre class="example">     set latex_preamble mypreamble.tex
+</pre>
+
+<p>in the <acronym>PP3</acronym> input script, and voil&agrave; &ndash; all star labels are
+larger.
+
+<br><p>
+   <p><acronym>PP3</acronym> knows nine hard-wired LaTeX hooks:
+
+     <dl>
+<dt><code>\Label</code>
+     <dd>Argument: the label text.  It applies to all labels except for flexes.
+
+     <br><dt><code>\TextLabel</code>
+     <dd>Argument: the label text.  It applies to all labels that the user
+creates with <code>text</code>.
+
+     <br><dt><code>\FlexLabel</code>
+     <dd>Argument: the label text.  It applies to all flexes.
+
+     <br><dt><code>\Starname</code>
+     <dd>Argument: the star name.  It applies to all automatically generated star
+names, in particular <em>not</em> to user-defined names given by
+<code>set_label_text</code>.
+
+     <br><dt><code>\Messier</code>
+     <dd><dt><code>\NGC</code>
+     <dd><dt><code>\IC</code>
+     <dd>Argument: the respective catalogue number.  This generates the labels
+for nebulae.  Notice that you must provide the catalogue name, or you
+can leave it as well.  For example, many people prefer <acronym>NGC</acronym>
+numbers as plain numbers without an `NGC' before it.  You achieve this
+effect with
+
+     <pre class="example">          \renewcommand*{\NGC}[1]{#1}
+     </pre>
+
+     <br><dt><code>\TicMark</code>
+     <dd>Argument: the tic mark label text.  It applies to all tic mark labels,
+see <a href="Tic-labels.html#Tic%20labels">Tic labels</a>.
+
+     <br><dt><code>\DP</code>
+     <dd>No argument.  This generates the decimal point.  By default, it's a `.',
+however in many countries a `,' is used instead.  You get this with
+
+     <pre class="example">          \renewcommand{\DP}{,}
+     </pre>
+
+   </dl>
+
+   </body></html>
+

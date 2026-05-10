@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+<title>Penalty scheme - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Input-scripts.html#Input%20scripts" title="Input scripts">
+<link rel="prev" href="Deleting-and-adding-objects.html#Deleting%20and%20adding%20objects" title="Deleting and adding objects">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Penalty%20scheme">Penalty scheme</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Deleting-and-adding-objects.html#Deleting%20and%20adding%20objects">Deleting and adding objects</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Input-scripts.html#Input%20scripts">Input scripts</a>
+<hr><br>
+</div>
+
+<h3 class="section">5.7 Penalty scheme</h3>
+
+<p>It is a tricky task to place labels on a dotty star map without creating
+to many overlaps, and especially overlaps with other labels are very
+annoying.  Therefore <acronym>PP3</acronym> tries to avoid that.
+
+   <p>It does so by using a penalty algorithm: It tests the eight windrose
+positions around the respective object, and calculates the resulting
+overlaps for each position.  The overlaps are counted as
+<em>penalties</em>.  The position with the smallest penalty value is
+chosen.  In very bad cases when the penalties exceed a certain
+threshold, the label is not printed at all.
+
+   <p>All of this can be overruled by the user, but normally the standard
+behaviour is good enough.  So read this section only if you are really
+keen to know how it works.
+
+<ul class="menu">
+<li><a accesskey="1" href="Basics-about-penalties.html#Basics%20about%20penalties">Basics about penalties</a>:       How PP3 calculates penalties. 
+<li><a accesskey="2" href="The-rim.html#The%20rim">The rim</a>:                      Avoiding objects coming too close to
+                                  labels. 
+<li><a accesskey="3" href="Overlaps-with-line-objects.html#Overlaps%20with%20line%20objects">Overlaps with line objects</a>:   Labels coming close to boundaries and
+                                  constellation lines. 
+<li><a accesskey="4" href="Penalty-threshold.html#Penalty%20threshold">Penalty threshold</a>:            When automatic labels are suppressed. 
+</ul>
+
+   </body></html>
+

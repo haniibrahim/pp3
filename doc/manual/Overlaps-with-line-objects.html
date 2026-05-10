@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+<title>Overlaps with line objects - PP3 1.3.2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="PP3 1.3.2">
+<meta name="generator" content="makeinfo 4.7pr1">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Penalty-scheme.html#Penalty%20scheme" title="Penalty scheme">
+<link rel="prev" href="The-rim.html#The%20rim" title="The rim">
+<link rel="next" href="Penalty-threshold.html#Penalty%20threshold" title="Penalty threshold">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual is for <acronym>PP3</acronym> (version 1.3.2),
+which is a celestial charts drawing tool.
+
+   <p>Copyright &copy; 2003 Torsten Bronger
+<tt>&lt;</tt><a href="mailto:bronger@users.sourceforge.net">bronger@users.sourceforge.net</a><tt>&gt;</tt>.
+
+   <blockquote>
+This documentation is free software; you can redistribute it and/or
+modify it under the terms of the <acronym>MIT</acronym> licence.  Please see the
+<tt>COPYING</tt> file of the <acronym>PP3</acronym> distribution for further information. 
+</blockquote>
+   -->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+body { background-color: white; background-image: url(kariert.png);
+  line-height: 1.2 }
+h1, h2, h3, h4, h5, h6 { font-family: sans-serif }
+a:link { text-decoration:none }
+a:visited { text-decoration:none }
+a:active { text-decoration:none }
+a:hover { text-decoration:underline; color:#0066FF; }
+li { margin-top: 1ex; margin-bottom: 1ex }
+ul.menu li, ul.index-cp li, div.contents li { margin-top: 0ex;
+  margin-bottom: 0ex}
+img { display: block; margin: 2ex }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Overlaps%20with%20line%20objects">Overlaps with line objects</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Penalty-threshold.html#Penalty%20threshold">Penalty threshold</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-rim.html#The%20rim">The rim</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Penalty-scheme.html#Penalty%20scheme">Penalty scheme</a>
+<hr><br>
+</div>
+
+<h4 class="subsection">5.7.3 Overlaps with line objects</h4>
+
+<p>&ldquo;Line objects&rdquo; means constellation lines and boundary lines. 
+<acronym>PP3</acronym> treats both of them in a special way: When they collide with
+the <em>rim</em> of a label, it's less bad than for non-line objects.  The
+reason is that lines are so different from labels visually, that it's
+not fatal if they are rather close together.
+
+   <p>The two new penalties that are used for the rim are
+<code>constellation_lines_rim</code> and <code>boundaries_rim</code>.  Their default
+value is <code>1000</code> as usual.  For example, with
+
+<pre class="example">     penalties boundaries_rim 0
+</pre>
+
+<p>you tell <acronym>PP3</acronym> that a label directly next to a boundary line is
+totally okay for you.
+
+   </body></html>
+
