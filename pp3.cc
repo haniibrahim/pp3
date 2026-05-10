@@ -5,7 +5,7 @@
 #line 331 "pp3.w"
 
 #include <iostream> 
-#include <string> 
+#include <cstring> 
 #include <fstream> 
 #include <sstream> 
 #include <vector> 
