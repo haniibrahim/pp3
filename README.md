@@ -5,13 +5,9 @@ PP3 creates celestial charts. It generates resolution independent maps of very h
 PP3 is used for the maps of *all* constellations on [Wikipedia](http://wikipedia.org/w/wiki.phtml?title=List_of_constellations)! (For example, have a
  look at the [Cygnus](http://www.wikipedia.org/wiki/Cygnus) entry.)
 
-PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004.
+PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004. 
 
-## My intention
-
-2021 I removed a bug and compiled it for GNU/Linux & macOS for the x86_64 platform and provided easy-2-use installers on my blog [pp3 | Hani's Omnium-Gatherum](https://blog.hani-ibrahim.de/en/?s=pp3) for my own purpose.
-
-2026 I want to install it on Windows 11 and found out that the provided binary from Torsten is no longer compatible with modern Windows. So I compiled it and build also an installer for it.
+**I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current GNU/Linux, macOS and Windows.** Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
 
 ## Prerequisites
 
@@ -32,6 +28,51 @@ This enables you to use two important commands:
 * latex for transforming the .tex file to a .dvi file.
 
 * dvips for transforming the .dvi file to a Postscript or EPS file.
+
+## Build & basic manual installation
+
+1. Download the latest version or clone it
+
+2. Decompress the archive if necessary
+
+### Unix
+
+1. Open the terminal.
+
+2. Change directory to the root of PP3 where the `Makefile` is located.
+   E.g.: `cd ~\Download\pp3`
+
+3. Type the command `make`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
+
+4. Move the `pp3` executable to the `/usr/local/bin/` directory:  
+   `sudo mv pp3 /usr/local/bin/`
+
+5. Create the directory `/usr/local/share/pp3`:  
+   `sudo mkdir /usr/local/share/pp3`
+
+6. Move the data files with the extension `*.dat` into the new directory:  
+   `sudo mv *.dat /usr/local/share/pp3/`
+
+7. PP3 is now installed.
+
+### Windows
+
+1. Open the Powershell or CMD.EXE
+
+2. Change directory to the root of PP3 where the `Makefile` is located: 
+   E.g.: `cd %USERPROFILE%\Download\pp3`
+
+3. Type the command `make`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
+
+4. Move the whole pp3-directory to the place you want to store it. I recommend paths without blanks, e.g. `C:\` → `C:\pp3`.
+
+5. Include `C:\pp3` into your path environment PATH variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
+
+6. PP3 is now installed.
+
+### Documentation
+
+Documentation, manuals in PDF & HTML is in the `doc` directory, examples in the `examples` directory.
 
 ## Examples
 
@@ -110,7 +151,6 @@ gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=jpeg -sOutputFile=out.png in.eps
 gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pnggray -r300 -sOutputFile=out_gray.png in.eps
 # Convert EPS to color PNG with 300dpi
 gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r300 -sOutputFile=out_color.png in.eps
-
 ```
 
 **PDF file** viewer are available by default on any platform.

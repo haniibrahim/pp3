@@ -928,9 +928,9 @@ string current_width,current_height,current_depth;
 string current_name;
 current_name= *(p++);
 raw_labels_file>>current_width>>current_height>>current_depth;
-current_width.substr(0,current_width.length()-3);
-current_height.substr(0,current_height.length()-3);
-current_depth.substr(0,current_depth.length()-3);
+current_width = current_width.substr(0,current_width.length()-3);
+current_height = current_height.substr(0,current_height.length()-3);
+current_depth = current_depth.substr(0,current_depth.length()-3);
 dimensions[current_name].width= strtod(current_width.c_str(),0)
 /72.27*2.54;
 dimensions[current_name].height= strtod(current_height.c_str(),0)
