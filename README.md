@@ -4,7 +4,7 @@ PP3 creates celestial charts. It generates resolution independent maps of very h
 
 PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004. 
 
-I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current [GNU/Linux](https://blog.hani-ibrahim.de/en/pp3-ubuntu.html), [macOS](https://blog.hani-ibrahim.de/en/pp3-macos.html) and [Windows]([Release v1.3.5 · haniibrahim/pp3 · GitHub](https://github.com/haniibrahim/pp3/releases/tag/v1.3.5)). Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
+I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current [GNU/Linux](https://blog.hani-ibrahim.de/en/pp3-ubuntu.html), [macOS](https://blog.hani-ibrahim.de/en/pp3-macos.html) and [Windows](https://github.com/haniibrahim/pp3/releases/tag/v1.3.5). Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
 
 ## Prerequisites
 
