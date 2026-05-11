@@ -2559,8 +2559,9 @@ else params.input_file= true;
 cerr<<"Invalid argument: "<<argv[1]<<endl;
 }
 if(params.in==0){
-cerr<<"PP3 1.3.2  Copyright (c) 2002--2004 Torsten Bronger\n"
-<<"           http://pp3.sourceforge.net\n\n"
+cerr<<"PP3 1.3.5  Copyright (c) 2002--2026 Torsten Bronger & Hani Ibrahim\n"
+<<"           1.3.3 => http://pp3.sourceforge.net\n"
+<<"           1.3.5 => https://github.com/haniibrahim/pp3\n\n"
 <<"Syntax:\n  pp3 {input-file}\n\n"
 <<"{input-file} may be \"-\" to denote standard input.\n"
 <<"You may give an empty file to get a default plot.\n"
