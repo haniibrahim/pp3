@@ -2,20 +2,17 @@
 
 PP3 creates celestial charts. It generates resolution independent maps of very high graphical quality. They can be used for example as illustrations in books or on web pages. You may use own databases or free ones from the Internet.
 
-PP3 is used for the maps of *all* constellations on [Wikipedia](http://wikipedia.org/w/wiki.phtml?title=List_of_constellations)! (For example, have a
- look at the [Cygnus](http://www.wikipedia.org/wiki/Cygnus) entry.)
-
 PP3 was developed by [Torsten Bronger](https://pp3.sourceforge.net/). The last version was 1.3.3 from 2004. 
 
-**I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current [GNU/Linux](https://blog.hani-ibrahim.de/en/pp3-ubuntu.html), [macOS](https://blog.hani-ibrahim.de/en/pp3-macos.html) and Windows (not yet).** Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
+I just provide a version which is compatible with modern C++ compilers and ready-2-use installers for current [GNU/Linux](https://blog.hani-ibrahim.de/en/pp3-ubuntu.html), [macOS](https://blog.hani-ibrahim.de/en/pp3-macos.html) and Windows (no installer yet). Please do not ask me for enhancements. I am not a C++ developer. I originally created this solely for my own use.
 
 ## Prerequisites
 
 PP3 creates a LaTeX file. Apparently you cannot directly do something with it. So you  have to have a TeX suite installed in the first place. Otherwise PP3 will not function.
 
-### TeX package
+### TeX Package
 
-For **Windows**, you may want to use the [MikTeX](http://www.miktex.org) distribution, or the [TeX Live](http://www.tug.org/texlive/) distribution. 
+For **Windows**, you may want to use the [MikTeX](http://www.miktex.org), or the [TeX Live](http://www.tug.org/texlive/) distribution. 
 
 For **GNU/Linux**, it is either already installed or you can easily install it with your package manager. On Debian or Ubuntu systems and derivatives you need the packages `texlive` and `texlive-pstricks`. 
 
@@ -29,11 +26,11 @@ This enables you to use two important commands:
 
 * dvips for transforming the .dvi file to a Postscript or EPS file.
 
-## Build & basic manual installation
+## Build & Basic Manual Installation
 
 1. Download the latest version or clone it
 
-2. Decompress the archive if necessary
+2. Extract the archive if necessary
 
 ### Unix
 
@@ -66,7 +63,7 @@ This enables you to use two important commands:
 
 4. Move the whole pp3-directory to the place you want to store it. I recommend paths without blanks, e.g. `C:\` → `C:\pp3`.
 
-5. Include `C:\pp3` into your path environment PATH variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
+5. Add `C:\pp3` to  PATH environment variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
 
 6. PP3 is now installed.
 
@@ -142,7 +139,9 @@ reposition M 23 NE ;
 pp3 scorpion_b&w.pp3
 ```
 
-## Output files
+## Using Output Files
+
+### For LaTeX
 
 In general PP3 generates:
 
@@ -150,13 +149,15 @@ In general PP3 generates:
 
 * Device Independent DVI file (*.dvi)
 
-* Encapsulated PostScript (EPS) file (*.eps) or 
+* Encapsulated PostScript (EPS) file (*.eps) and
 
 * PDFs are possible.
 
-To view the **EPS file** on GNU/Linux had a viewer installed by default. For Windows I recommend [IrfanView](https://www.irfanview.com/). Since newer macOS version and its Preview.app do not support Postscript anymore, there are some commercial viewer on the App Store.
+That's ideal for LaTeX.
 
-Unfortunately Microsoft Word or LibreOffice do not support EPS files anymore. 
+### For Web, E-Mail
+
+To view the **EPS file** on GNU/Linux had a viewer installed by default. For Windows I recommend [IrfanView](https://www.irfanview.com/). Since newer macOS version and its Preview.app do not support Postscript anymore, there are some commercial viewer on the App Store.
 
 For viewing and converting on **all platforms** I recommend [Inkscape](https://inkscape.org/) or on the terminal for all platforms [Ghostscript](https://www.ghostscript.com/)
 
@@ -171,11 +172,41 @@ gs -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r300 -sOutputFile=out_color.png in
 
 **PDF file** viewer are available by default on any platform.
 
+### For Word Processors
+
+Unfortunately current Microsoft Word or LibreOffice Writer do not support EPS files anymore. The best format for scalable graphics is SVG today.
+
+The **best and most reliable way** to import celestial charts as scalable vector graphics from PP3:
+
+1. Create PDF output with PP3 (`switch pdf_output on` in the input-file) from the beginning.
+
+2. Convert it via [Inkscape](https://inkscape.org/) to SVG with the GUI-app or the CLI-app: 
+   
+   ```bash
+   inkscape pp3_out.pdf --export-type=svg --export-filename=out.svg
+   ```
+
+In older Inscape version you may use: `inkscape --file=pp3-out.pdf --export-plain-svg=out.svg`.
+
+Or **direct from EPS to SVG** (not tested):
+
+If you have `pstoedit` with Ghostscript support installed you can do it in one command:
+
+```pstoedit
+pstoedit -f plot-svg pp3_out.eps out.svg
+```
+
+or depended on the `pstoedit` version:
+
+```
+pstoedit -f svg pp3_out.eps out.svg
+```
+
 ## Disclaimer
 
-PP3 is written in C++. I am not a C++ developer or has expertise in that language. I could remove the bugs by just googling the error and warnings and with AI.
+PP3 is written primarily in C++. I am not a C++ developer and have no expertise in that language. I was able to update the code for modern compilers by simply Googling the error messages and warnings and using AI.
 
-I am not able to add new features, expand the database or find serious bugs. I just providing binaries and share them with you who can not compile it themselves.
+I am unable to add new features, expand the database, or fix serious bugs. I simply provide binary files and share them with those who are unable to compile the program themselves.
 
 ## License
 
