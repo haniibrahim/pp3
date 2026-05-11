@@ -59,9 +59,9 @@ This enables you to use two important commands:
 2. Change directory to the root of PP3 where the `Makefile` is located: 
    E.g.: `cd %USERPROFILE%\Download\pp3`
 
-3. Type the command `make`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
+3. Type the command `make -f makefile.win.mak`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
 
-4. Move the whole pp3-directory to the place you want to store it. I recommend paths without blanks, e.g. `C:\` → `C:\pp3`.
+4. Move the whole pp3-directory to  `C:\` → `C:\pp3`. **Do not install it anywhere else!**
 
 5. Add `C:\pp3` to  PATH environment variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
 
