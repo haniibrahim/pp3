@@ -62,8 +62,9 @@ This enables you to use two important commands:
 3. Type the command `make -f makefile.win.mak`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
 
 4. Move the whole pp3-directory to  `C:\` → `C:\pp3`. **Do not install it anywhere else!**
+   If you do not install it in `C:\pp3` you have to set the environment variable `PP3DATA` to the chosen path. Avoid paths with blanks.
 
-5. Add `C:\pp3` to  PATH environment variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
+5. Add `C:\pp3` (or the chosen one) to the `PATH` environment variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
 
 6. PP3 is now installed.
 
@@ -178,7 +179,7 @@ Unfortunately current Microsoft Word or LibreOffice Writer do not support EPS fi
 
 The **best and most reliable way** to import celestial charts as scalable vector graphics from PP3:
 
-1. Create PDF output with PP3 (`switch pdf_output on` in the input-file) from the beginning.
+1. Create PDF output with PP3 (`switch pdf_output on` in the input-file).
 
 2. Convert it via [Inkscape](https://inkscape.org/) to SVG with the GUI-app or the CLI-app: 
    
