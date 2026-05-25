@@ -12,11 +12,11 @@ PP3 creates a LaTeX file. Apparently you cannot directly do something with it. S
 
 ### TeX Package
 
-For **Windows**, you may want to use the [MikTeX](http://www.miktex.org), or the [TeX Live](http://www.tug.org/texlive/) distribution. 
+For **Windows**, you may want to use the [MikTeX](http://miktex.org), or the [TeX Live](http://www.tug.org/texlive/) distribution. 
 
 For **GNU/Linux**, it is either already installed or you can easily install it with your package manager. On Debian or Ubuntu systems and derivatives you need the packages `texlive` and `texlive-pstricks`. 
 
-At **macOS** you can install [MacTeX](https://www.tug.org/mactex/). 
+At **macOS** you can install [MacTeX](https://www.tug.org/mactex/).
 
 *Please be advised that these packages can occupy a lot of space on your disc.*
 
@@ -26,7 +26,27 @@ This enables you to use two important commands:
 
 * dvips for transforming the .dvi file to a Postscript or EPS file.
 
-## Build & Basic Manual Installation
+### Compilation
+
+If you want to compile PP3 yourself you need *at least*:
+
+* C++ compiler (e.g. `g++`, `clang++`, …)
+
+* Build tool `make` 
+
+You need no TeX package for basic compilation. 
+
+To build documentation or if you want to change `pp3.w` also …
+
+* `ctangle`
+
+* `cweave`
+
+* TeX package
+
+But ready-to-use documentation is in the distribution included.
+
+## Basic Build & Manual Installation
 
 1. Download the latest version or clone it
 
@@ -39,10 +59,12 @@ This enables you to use two important commands:
 2. Change directory to the root of PP3 where the `Makefile` is located.
    E.g.: `cd ~/Download/pp3`
 
-3. Type the command `make`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
+3. Type the command `make`. This should run without errors, you can ignore warnings (on macOS). A new executable file named `pp3` should have been created. PP3 is compiled now.
 
 4. Move the `pp3` executable to the `/usr/local/bin/` directory:  
-   `sudo mv pp3 /usr/local/bin/`
+   `sudo mv pp3 /usr/local/bin/` … 
+   
+   … or type `make install` (not tested) and skip the  all following instructions.
 
 5. Create the directory `/usr/local/share/pp3`:  
    `sudo mkdir /usr/local/share/pp3`
@@ -52,17 +74,25 @@ This enables you to use two important commands:
 
 7. PP3 is now installed.
 
+You can copy the content of the `doc` directory (documentation) in a created `/usr/local/share/doc/pp3` directory and the `examples`directory in your HOME directory to play with:
+
+```bash
+sudo mkdir -p /usr/local/share/doc/pp3
+sudo cp ./doc/* /usr/local/share/doc/pp3/
+cp ./examples ~
+```
+
 ### Windows
 
 1. Open the Powershell or CMD.EXE
 
 2. Change directory to the root of PP3 where the `Makefile` is located: 
-   E.g.: `cd %USERPROFILE%\Download\pp3`
+   E.g.: `cd %USERPROFILE%\Download\pp3` (CMD) or `cd ~\Download\pp3` (Powershell).
 
-3. Type the command `make -f makefile.win.mak`. This should run without errors. A new executable file named `pp3` should have been created. PP3 is compiled now.
+3. Type the command `make -f makefile.win.mak`. This should run without errors if your C++ compiler is `g++`. Otherwise edit variable `CXX` in `makefile.win.mak`. A new executable file named `pp3` should have been created. PP3 is compiled now.
 
 4. Move the whole pp3-directory to  `C:\` → `C:\pp3`. **Do not install it anywhere else!**
-   If you do not install it in `C:\pp3` you have to set the environment variable `PP3DATA` to the chosen path. Avoid paths with blanks.
+   *If you do not move the pp3-directory to `C:\`  (not recommended) you have to set the environment variable `PP3DATA` to the chosen path. Avoid paths with blanks.*
 
 5. Add `C:\pp3` (or the chosen one) to the `PATH` environment variable ([How to Edit the PATH Environment Variable on Windows 11 & 10](https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows)).
 
@@ -71,6 +101,18 @@ This enables you to use two important commands:
 ### Documentation
 
 Documentation, manuals in PDF & HTML is in the `doc` directory, examples in the `examples` directory.
+
+## Binary Installers
+
+Installers for:
+
+* Windows (x86_64)
+
+* macOS (x86_64)
+
+* Linux (x86_64), Debian package
+
+can be found at [Releases](https://github.com/haniibrahim/pp3/releases).
 
 ## Examples
 

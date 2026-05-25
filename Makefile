@@ -127,3 +127,5 @@ distri-win:
 	cp win-bin/*.* $(DISTRINAME)-win
 	zip -9 -r $(DISTRINAME)-win.zip $(DISTRINAME)-win/
 
+clean: 
+	rm -f pp3

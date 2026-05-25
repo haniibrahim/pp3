@@ -1,34 +1,27 @@
 #	$Id: Makefile,v 1.16 2004/08/14 16:27:40 bronger Exp $	
-.PHONY: distri distri-cripple rpm distri-win all info doc
+.PHONY: all clean
 
-# you may set this to empty in order to install the files
-# non-locally.
-LOCAL=c:/pp3
+# Specify your C++ compiler
+CXX=g++
 
-# Convert / to \ for Windows runtime usage
-#WINPATH = $(subst /,\\,$(LOCAL))
-
-USRDIR=$(LOCAL)
-
-# Standard share directory
-DATADIR= $(LOCAL)
-
-# directory for pp3 databases
-PP3DATA= $(LOCAL)
-
-# destination directory for executables
-DESTDIR= $(USRDIR)
-
-CHANGEFILE=-
+# Target/Install directory
+# *.dat files have to be there
+PP3DATA=c:/pp3
 
 CXXFLAGS=-s -O2
+
+CHANGEFILE=-
 
 # No changes should be necessary below this line 
 # -----------------------------------------------------
 
 all: pp3
 
+%.cc : %.w
+	$(CTANGLE) $* $(CHANGEFILE) $@
+
 pp3: pp3.cc
-	$(CXX) -DPP3DATA=\"$(PP3DATA)\" pp3win.cc $(CXXFLAGS) -o pp3
+	$(CXX) -DPP3DATA=\"$(PP3DATA)\" pp3.cc $(CXXFLAGS) -o pp3.exe
 
-
+clean:
+	del pp3.exe
