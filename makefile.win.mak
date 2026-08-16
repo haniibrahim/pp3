@@ -8,7 +8,7 @@ CXX=g++
 # *.dat files have to be there
 PP3DATA=c:/pp3
 
-CXXFLAGS=-s -O2
+CXXFLAGS=-s -O2 --static
 
 CHANGEFILE=-
 

@@ -24,7 +24,7 @@ DESTDIR= $(USRDIR)/bin
 
 CHANGEFILE=-
 
-CXXFLAGS=-s -O2
+CXXFLAGS=-s -O2 --static
 
 # The standard file permissions for installed 
 # non-executables
